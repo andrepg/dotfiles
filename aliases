@@ -1,0 +1,23 @@
+alias updeck="nohup ~/OBS/UPDeck/love ~/OBS/UPDeck/UPDeck.love > nohup.log 2>&1 &"
+alias sail="vendor/bin/sail"
+
+alias start-llm="systemctl --user start ollama"
+alias stop-llm="systemctl --user stop ollama"
+
+alias wc-start="sudo waydroid container start"
+alias wc-stop="sudo waydroid container stop"
+
+alias ws-stop="waydroid session stop"
+
+alias gitl="git log --graph --abbrev-commit --decorate --all"
+alias gitls="git log --graph --oneline --decorate --all"
+alias gitc="git commit -m "
+alias gits="git status"
+alias gita="git add"
+alias gitps="git push"
+alias gitpu="git pull"
+alias gitf="git fetch --all"
+
+alias sat="sail artisan test"
+alias satf="sail artisan test --filter"
+alias searchproc="ps aux | grep -i "
