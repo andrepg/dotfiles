@@ -23,28 +23,38 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
-
 ### bling.sh source start
 test -f /usr/share/ublue-os/bluefin-cli/bling.sh && source /usr/share/ublue-os/bluefin-cli/bling.sh
 ### bling.sh source end
 
-## Disable case-sensitivity on terminal auto-completion
 bind 'set completion-ignore-case on'
+alias updeck="nohup ~/OBS/UPDeck/love ~/OBS/UPDeck/UPDeck.love > nohup.log 2>&1 &"
+alias sail="vendor/bin/sail"
 
-## Custom Ollama LLM Bluefin alises
 alias start-llm="systemctl --user start ollama"
 alias stop-llm="systemctl --user stop ollama"
 
-## Custom Waydroid container and session aliases
 alias wc-start="sudo waydroid container start"
 alias wc-stop="sudo waydroid container stop"
+
 alias ws-stop="waydroid session stop"
 
-## Custom git aliases
 alias gitl="git log --graph --abbrev-commit --decorate --all"
 alias gitls="git log --graph --oneline --decorate --all"
+alias gitc="git commit -m "
+alias gits="git status"
+alias gita="git add"
+alias gitps="git push"
+alias gitpu="git pull"
+alias gitf="git fetch --all"
 
-## Custom artisan aliases
-alias sail="vendor/bin/sail"
 alias sat="sail artisan test"
 alias satf="sail artisan test --filter"
+
+ELECTRON_OZONE_PLATFORM_HINT=auto
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
+### bling.sh source start
+test -f /usr/share/ublue-os/bling/bling.sh && source /usr/share/ublue-os/bling/bling.sh
+### bling.sh source end
