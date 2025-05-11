@@ -156,3 +156,5 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 source ~/.aliases
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
