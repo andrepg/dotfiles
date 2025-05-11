@@ -155,6 +155,9 @@ source "$OSH"/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+
 source ~/.aliases
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(atuin init bash)"

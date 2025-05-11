@@ -21,3 +21,6 @@ alias gitf="git fetch --all"
 alias sat="sail artisan test"
 alias satf="sail artisan test --filter"
 alias searchproc="ps aux | grep -i "
+
+alias config-hypr="nano ~/.config/hypr/hyprland.conf"
+alias config-hypr-mod="cd ~/.config/hypr/ && nano "
