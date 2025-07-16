@@ -146,6 +146,10 @@ source "$OSH"/oh-my-bash.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+export PATH="$PATH:~/.local/bin"
+
+export GTK_IM_MODULE="ibus"
+export QT_IM_MODULE="ibus"
 
 # Set personal aliases, overriding those provided by oh-my-bash libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-bash
@@ -155,9 +159,10 @@ source "$OSH"/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
 source ~/.aliases
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(atuin init bash)"

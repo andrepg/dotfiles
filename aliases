@@ -1,8 +1,10 @@
+alias reset-waybar="pkill waybar && hyprctl dispatch exec waybar"
+
 alias updeck="nohup ~/OBS/UPDeck/love ~/OBS/UPDeck/UPDeck.love > nohup.log 2>&1 &"
 alias sail="vendor/bin/sail"
 
-alias start-llm="systemctl --user start ollama"
-alias stop-llm="systemctl --user stop ollama"
+alias start-llm="nvidia-smi -pm 1 && systemctl --user start ollama"
+alias stop-llm="nvidia-smi -pm 0 && systemctl --user stop ollama"
 
 alias wc-start="sudo waydroid container start"
 alias wc-stop="sudo waydroid container stop"
@@ -17,10 +19,10 @@ alias gita="git add"
 alias gitps="git push"
 alias gitpu="git pull"
 alias gitf="git fetch --all"
+alias checkout="git checkout"
+alias branch="git checkout -B"
 
 alias sat="sail artisan test"
 alias satf="sail artisan test --filter"
 alias searchproc="ps aux | grep -i "
 
-alias config-hypr="nano ~/.config/hypr/hyprland.conf"
-alias config-hypr-mod="cd ~/.config/hypr/ && nano "
