@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layoutList>
+  <optionList>
+    <group allowMultipleSelection="true">
+      <configItem>
+        <name>scrolllock</name>
+        <description>Scroll Lock options</description>
+      </configItem>
+      <option>
+        <configItem>
+          <name>scrolllock:mod3</name>
+          <description>Map Scroll Lock as Mod3</description>
+        </configItem>
+      </option>
+    </group>
+  </optionList>
+</layoutList>
