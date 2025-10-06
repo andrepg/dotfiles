@@ -1,8 +1,6 @@
-alias reset-waybar="pkill waybar && hyprctl dispatch exec waybar"
+alias updeck="nohup ~/OBS/UPDeck/love ~/OBS/UPDeck/UPDeck.love > /dev/null 2>&1 &"
 
-alias updeck="nohup ~/OBS/UPDeck/love ~/OBS/UPDeck/UPDeck.love > nohup.log 2>&1 &"
-alias sail="vendor/bin/sail"
-
+alias alpaca="flatpak run com.jeffser.Alpaca"
 alias start-llm="nvidia-smi -pm 1 && systemctl --user start ollama"
 alias stop-llm="nvidia-smi -pm 0 && systemctl --user stop ollama"
 
@@ -22,7 +20,21 @@ alias gitf="git fetch --all"
 alias checkout="git checkout"
 alias branch="git checkout -B"
 
-alias sat="sail artisan test"
-alias satf="sail artisan test --filter"
 alias searchproc="ps aux | grep -i "
 
+alias artisan="php artisan "
+
+## Container management
+alias docker-stop="sudo systemctl stop docker.socket && sudo systemctl stop docker.service"
+alias docker-start="sudo systemctl start docker.socket && sudo systemctl start docker.service"
+
+alias podman-start="sudo systemctl start podman.socket && sudo systemctl start podman.socket"
+alias podman-stop="sudo systemctl stop podman.socket && sudo systemctl stop podman.socket"
+
+alias doc="docker compose"
+
+## Projects aliases
+
+alias projetos="cd ~/Projetos"
+alias xtreed="cd ~/Projetos/xtreed"
+alias nutrihive="cd ~/Projetos/nutrihive"
