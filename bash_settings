@@ -14,9 +14,6 @@ OSH_THEME="lambda"
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
@@ -27,11 +24,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 OMB_USE_SUDO=false
 
 # To enable/disable display of Python virtualenv and condaenv
-OMB_PROMPT_SHOW_PYTHON_VENV=true  # enable
-
-# To enable/disable Spack environment information
-# OMB_PROMPT_SHOW_SPACK_ENV=true  # enable
-# OMB_PROMPT_SHOW_SPACK_ENV=false # disable
+OMB_PROMPT_SHOW_PYTHON_VENV=true
 
 # Which completions would you like to load? (completions can be found in ~/.oh-my-bash/completions/*)
 # Custom completions may be added to ~/.oh-my-bash/custom/completions/
@@ -69,23 +62,29 @@ OMB_TERM_USE_TPUT=no
 
 source "$OSH"/oh-my-bash.sh
 
-
+# Define custom path to systems and user scripts
 export PATH="$PATH:$HOME/.local/bin:$HOME/.qlty/bin"
 
+# Set GTK preferences and window decorators
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 
+# Prefer Wayland over X11
+export GDK_BACKEND="wayland"
+export QT_QTA_PLATFORM="wayland"
+export ELECTRON_OZONE_PLATFORM_HINT="wayland"
+
 # Set personal aliases, overriding those provided by oh-my-bash libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-bash
-# users are encouraged to define aliases within the OSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-source ~/.aliases
+# plugins, and themes.
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 # Require bash-preexec, if installed
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 
+# Require .profile, if it exists
+[[ -f ~/.profile ]] && source ~/.profile
+
+# Load Brew and Atuin shell, importing history again
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(atuin init bash)"
-
-atuin import auto > /dev/null 2>&1
+eval "$(atuin import auto > /dev/null 2>&1 || true)"
