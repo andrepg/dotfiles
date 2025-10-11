@@ -1,0 +1,8 @@
+show=drun
+allow_markup=true
+matching=contains
+insensitive=true
+
+allow_images=true
+image_size=24
+

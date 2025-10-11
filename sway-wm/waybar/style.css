@@ -1,0 +1,86 @@
+@import "macchiato.css";	
+
+* {
+  font-family: "Cantarell";
+  font-size: 11px;
+  min-height: 0;
+}
+
+#idle_inhibitor {
+   margin: 0rem 1rem;
+}
+
+#waybar {
+  background: rgba(0, 0, 0, 0);
+  color: @text;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  background-color: @surface0;
+}
+
+#workspaces button {
+  color: @lavender;
+}
+
+#workspaces button.active {
+  color: @sky;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.3rem 1rem;
+}
+
+#clock {
+  color: @blue;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#pulseaudio {
+  color: @maroon;
+}
+
+#custom-music {
+  color: @mauve;
+}
+
+#custom-lock {
+    color: @lavender;
+}
+
+#custom-power {
+    color: @red;
+}
+
+#tray, #workspaces, #clock, #pulseaudio , #custom-power, #battery {
+    margin: 0.5rem 0.5rem;
+    border-radius: 1rem;
+}
