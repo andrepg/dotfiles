@@ -5,7 +5,7 @@ case $- in
 esac
 
 # Path to your oh-my-bash installation.
-export OSH='/var/home/andre/.oh-my-bash'
+export OSH="$HOME/.oh-my-bash"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
@@ -69,10 +69,13 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/.qlty/bin"
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 
+export XDEBUG_SESSION=andre
+
 # Prefer Wayland over X11
 export GDK_BACKEND="wayland"
 export QT_QTA_PLATFORM="wayland"
 export ELECTRON_OZONE_PLATFORM_HINT="wayland"
+export SDL_VIDEO_DRIVER="wayland"
 
 # Set personal aliases, overriding those provided by oh-my-bash libs,
 # plugins, and themes.
