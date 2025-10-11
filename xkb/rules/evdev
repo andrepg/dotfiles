@@ -1,4 +1,0 @@
-! include %S/evdev
-
-! option = symbols
-  scrolllock:mod3 = +scrolllock(mod3)
