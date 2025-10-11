@@ -13,3 +13,6 @@ Customizations like Bash aliases, shortcuts, paths or other things will also be 
 This is the main Bash profile. It will load any other files and custom aliases.
 
 
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=andrepg/dotfiles@github)](https://gitads.dev/v1/ad-track?source=andrepg/dotfiles@github)
+
