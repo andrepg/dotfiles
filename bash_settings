@@ -91,3 +91,7 @@ export SDL_VIDEO_DRIVER="wayland"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(atuin init bash)"
 eval "$(atuin import auto > /dev/null 2>&1 || true)"
+
+# qlty
+export QLTY_INSTALL="$HOME/.qlty"
+export PATH=$QLTY_INSTALL/bin:$PATH
