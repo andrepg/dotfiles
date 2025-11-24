@@ -60,7 +60,7 @@ plugins=(
 #
 OMB_TERM_USE_TPUT=no
 
-source "$OSH"/oh-my-bash.sh
+source "$OSH/oh-my-bash.sh"
 
 # Define custom path to systems and user scripts
 export PATH="$PATH:$HOME/.local/bin:$HOME/.qlty/bin"
@@ -94,4 +94,6 @@ eval "$(atuin import auto > /dev/null 2>&1 || true)"
 
 # qlty
 export QLTY_INSTALL="$HOME/.qlty"
-export PATH=$QLTY_INSTALL/bin:$PATH
+#export PATH=$QLTY_INSTALL/bin:$PATH
+
+test -f /usr/share/ublue-os/bling/bling.sh && source /usr/share/ublue-os/bling/bling.sh
