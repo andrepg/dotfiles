@@ -9,7 +9,8 @@ export OSH="$HOME/.oh-my-bash"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="lambda"
+# OSH_THEME="lambda"
+OSH_THEME="powerbash10k"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -21,16 +22,29 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # To disable the uses of "sudo" by oh-my-bash, please set "false" to
 # this variable.  The default behavior for the empty value is "true".
-OMB_USE_SUDO=false
+OMB_USE_SUDO=true
 
 # To enable/disable display of Python virtualenv and condaenv
 OMB_PROMPT_SHOW_PYTHON_VENV=true
+
+# Load Brew and Atuin shell, importing history again
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(atuin init bash)"
+eval "$(atuin import auto > /dev/null 2>&1 || true)"
 
 # Which completions would you like to load? (completions can be found in ~/.oh-my-bash/completions/*)
 # Custom completions may be added to ~/.oh-my-bash/custom/completions/
 # Example format: completions=(ssh git bundler gem pip pip3)
 # Add wisely, as too many completions slow down shell startup.
-completions=(git composer ssh docker-compose brew git_flow)
+completions=(
+  git
+  composer
+  ssh
+  docker-compose
+  brew
+  git_flow
+  awscli
+)
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
 # Custom aliases may be added to ~/.oh-my-bash/custom/aliases/
@@ -46,8 +60,9 @@ aliases=(
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  aws
+  fzf
   brew
-  starship
   battery
   progress
   bashmarks
@@ -63,7 +78,7 @@ OMB_TERM_USE_TPUT=no
 source "$OSH/oh-my-bash.sh"
 
 # Define custom path to systems and user scripts
-export PATH="$PATH:$HOME/.local/bin:$HOME/.qlty/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.qlty/bin:$HOME/.var/app/vscode/bin"
 
 # Set GTK preferences and window decorators
 export GTK_IM_MODULE="ibus"
@@ -87,13 +102,14 @@ export SDL_VIDEO_DRIVER="wayland"
 # Require .profile, if it exists
 [[ -f ~/.profile ]] && source ~/.profile
 
-# Load Brew and Atuin shell, importing history again
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(atuin init bash)"
-eval "$(atuin import auto > /dev/null 2>&1 || true)"
+# Enable Yarn completion
+if [ -f  /home/linuxbrew/.linuxbrew/etc/bash_completion.d/yarn ]; then
+    . /home/linuxbrew/.linuxbrew/etc/bash_completion.d/yarn
+fi
 
-# qlty
-export QLTY_INSTALL="$HOME/.qlty"
-#export PATH=$QLTY_INSTALL/bin:$PATH
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/var/home/andre/.lmstudio/bin"
+# End of LM Studio CLI section
 
-test -f /usr/share/ublue-os/bling/bling.sh && source /usr/share/ublue-os/bling/bling.sh
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh";
+[[ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]] && . "${___MY_VMOPTIONS_SHELL_FILE}"

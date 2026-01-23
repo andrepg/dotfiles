@@ -6,11 +6,7 @@ This is a simple Bash script collection to install some basic utilities to make 
 
 Each script is designed to a specific distro. Some of them already have some tools, others don't. One good example is that Atomic distros already come with Flatpak preinstalled, while others more robust don't.
 
-### archinstall.sh
-
-Contains (for now) a laboratory to a future migration to Arch Linux
-
-## agnostic.sh
+## entrypoint.sh
 
 The binaries & tools that do not require a specific distro nor a single package manager. This includes extra packages managers as well, such Brew and Flatpak
 

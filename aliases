@@ -1,14 +1,14 @@
-alias updeck="nohup ~/OBS/UPDeck/love ~/OBS/UPDeck/UPDeck.love > /dev/null 2>&1 &"
-
+## LLM and AI Chats
 alias alpaca="flatpak run com.jeffser.Alpaca"
 alias start-llm="nvidia-smi -pm 1 && systemctl --user start ollama"
 alias stop-llm="nvidia-smi -pm 0 && systemctl --user stop ollama"
 
+# Waydroid management
 alias wc-start="sudo waydroid container start"
 alias wc-stop="sudo waydroid container stop"
-
 alias ws-stop="waydroid session stop"
 
+# Git related
 alias gitl="git log --graph --abbrev-commit --decorate --all"
 alias gitls="git log --graph --oneline --decorate --all"
 alias gitc="git commit -m "
@@ -20,19 +20,19 @@ alias gitf="git fetch --all"
 alias checkout="git checkout"
 alias branch="git checkout -B"
 
+# Miscellaneous
+alias updeck="nohup ~/OBS/UPDeck/love ~/OBS/UPDeck/UPDeck.love > /dev/null 2>&1 &"
 alias searchproc="ps aux | grep -i "
-
 alias artisan="php artisan "
+alias projetos="cd ~/Projetos"
 
 ## Container management
 alias docker-stop="sudo systemctl stop docker.socket && sudo systemctl stop docker.service"
 alias docker-start="sudo systemctl start docker.socket && sudo systemctl start docker.service"
-
 alias podman-start="sudo systemctl --user start podman.socket && sudo systemctl start podman.socket"
 alias podman-stop="sudo systemctl --user stop podman.socket && sudo systemctl stop podman.socket"
-
 alias doc="docker compose"
+alias pc="podman compose"
 
-## Projects aliases
-
-alias projetos="cd ~/Projetos"
+## System management
+alias sysupgrade="sh ~/Projetos/dotfiles/distro-setup/upgrade.sh"
