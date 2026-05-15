@@ -26,12 +26,10 @@ alias searchproc="ps aux | grep -i "
 alias artisan="php artisan "
 alias projetos="cd ~/Projetos"
 
-## Container management
-alias docker-stop="sudo systemctl stop docker.socket && sudo systemctl stop docker.service"
-alias docker-start="sudo systemctl start docker.socket && sudo systemctl start docker.service"
-alias podman-start="sudo systemctl --user start podman.socket && sudo systemctl start podman.socket"
-alias podman-stop="sudo systemctl --user stop podman.socket && sudo systemctl stop podman.socket"
-alias doc="docker compose"
+## Podman Container management
+alias podman-start="systemctl --user start podman.socket"
+alias podman-stop="systemctl --user stop podman.socket"
+alias podman-status="systemctl --user status podman.socket"
 alias pc="podman compose"
 
 ## System management

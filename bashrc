@@ -37,13 +37,10 @@ eval "$(atuin import auto > /dev/null 2>&1 || true)"
 # Example format: completions=(ssh git bundler gem pip pip3)
 # Add wisely, as too many completions slow down shell startup.
 completions=(
-  git
   composer
-  ssh
-  docker-compose
   brew
-  git_flow
-  awscli
+  git
+  ssh
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
@@ -78,7 +75,7 @@ OMB_TERM_USE_TPUT=no
 source "$OSH/oh-my-bash.sh"
 
 # Define custom path to systems and user scripts
-export PATH="$PATH:$HOME/.local/bin:$HOME/.qlty/bin:$HOME/.var/app/vscode/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.var/app/vscode/bin:$HOME/.config/composer/vendor/bin"
 
 # Set GTK preferences and window decorators
 export GTK_IM_MODULE="ibus"
@@ -106,10 +103,3 @@ export SDL_VIDEO_DRIVER="wayland"
 if [ -f  /home/linuxbrew/.linuxbrew/etc/bash_completion.d/yarn ]; then
     . /home/linuxbrew/.linuxbrew/etc/bash_completion.d/yarn
 fi
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/var/home/andre/.lmstudio/bin"
-# End of LM Studio CLI section
-
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh";
-[[ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]] && . "${___MY_VMOPTIONS_SHELL_FILE}"
